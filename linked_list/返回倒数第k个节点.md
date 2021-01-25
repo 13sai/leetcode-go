@@ -20,7 +20,7 @@ https://leetcode-cn.com/problems/kth-node-from-end-of-list-lcci/
 1. 计算长度
 2. 遍历到倒数第k个节点
 
-```
+```go
 /**
  * Definition for singly-linked list.
  * type ListNode struct {
@@ -52,7 +52,7 @@ func kthToLast(head *ListNode, k int) int {
 
 题解看到这么一种解法，很不错。算是双指针吧，fast先移动k个偏移量，再slow和fast一起向后，fast到末尾，slow也刚好到达题目中所需的倒数第k个节点。
 
-```
+```go
 /**
  * Definition for singly-linked list.
  * type ListNode struct {
