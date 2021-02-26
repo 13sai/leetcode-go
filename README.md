@@ -1,6 +1,6 @@
 # leetcode-go
 
-力扣题目笔记，部分答案参考其他人的题解。
+力扣题目笔记，部分答案参考网络题解。
 
 
 ### 目录
@@ -11,3 +11,5 @@
 - [队列](https://github.com/13sai/leetcode-go/tree/master/list)
 - [链表](https://github.com/13sai/leetcode-go/tree/master/linked_list)
 - [排序](https://github.com/13sai/leetcode-go/tree/master/sort)
+- [动态规划](https://github.com/13sai/leetcode-go/tree/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92)
+

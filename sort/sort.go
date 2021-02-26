@@ -157,7 +157,6 @@ func partition(arr []int, start, end int) int {
 	return i
 }
 
-
 //堆的特性
 //1.是完全二叉树
 //2.每一个节点都小于子节点(最小堆)
@@ -166,54 +165,54 @@ func partition(arr []int, start, end int) int {
 func HeapSort(a []int) []int {
 	heapLength := len(a)
 	a = buildHeap(a, heapLength)
-    fmt.Println(a)
-    for i := len(a) - 1; i >= 0; i-- {
-        a[i], a[0] = a[0], a[i]
-        heapLength--
-        a = minHeap(a, 0, heapLength)
+	fmt.Println(a)
+	for i := len(a) - 1; i >= 0; i-- {
+		a[i], a[0] = a[0], a[i]
+		heapLength--
+		a = minHeap(a, 0, heapLength)
 	}
 	return a
 }
 
 // 最小堆
-// 大顶堆：arr[i] >= arr[2i+1] && arr[i] >= arr[2i+2]  
-// 小顶堆：arr[i] <= arr[2i+1] && arr[i] <= arr[2i+2]  
-func parentNode(i int)  int{
-    return (i - 1)/2
+// 大顶堆：arr[i] >= arr[2i+1] && arr[i] >= arr[2i+2]
+// 小顶堆：arr[i] <= arr[2i+1] && arr[i] <= arr[2i+2]
+func parentNode(i int) int {
+	return (i - 1) / 2
 }
- 
+
 //左节点
-func leftNode(i int) int{
-    return 2*i + 1
+func leftNode(i int) int {
+	return 2*i + 1
 }
+
 //右节点
-func rightNode(i int) int{
-    return 2*i + 2
+func rightNode(i int) int {
+	return 2*i + 2
 }
+
 //创建heap
-func buildHeap(heap []int, length int) []int{
-    for i := length/2 - 1; i >= 0; i-- {
-        heap = minHeap(heap, i, length)
-    }
-    return heap
+func buildHeap(heap []int, length int) []int {
+	for i := length/2 - 1; i >= 0; i-- {
+		heap = minHeap(heap, i, length)
+	}
+	return heap
 }
- 
-func minHeap(heap []int, i int, length int) []int{
-    left := leftNode(i)
-    right := rightNode(i)
-    largest := 0
-    if left < length && heap[left] > heap[i] {
-        largest = left
-    } else {
-        largest = i
-    }
-    if right < length && heap[right] > heap[largest] {
-        largest = right
-    }
-    if largest != i {
-        heap[i], heap[largest] = heap[largest], heap[i]
-        //需要继续比较其父节点
-        heap = minHeap(heap, largest, length)
+
+func minHeap(heap []int, i int, length int) []int {
+	left := leftNode(i)
+	right := rightNode(i)
+	largest := i
+	if left < length && heap[left] > heap[i] {
+		largest = left
+	}
+	if right < length && heap[right] > heap[largest] {
+		largest = right
+	}
+	if largest != i {
+		heap[i], heap[largest] = heap[largest], heap[i]
+		//需要继续比较其父节点
+		heap = minHeap(heap, largest, length)
 	}
 	// fmt.Println(heap)
 	return heap
