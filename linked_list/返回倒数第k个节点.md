@@ -50,7 +50,9 @@ func kthToLast(head *ListNode, k int) int {
 使用链表翻转显然也是一种解法。
 
 
-题解看到这么一种解法，很不错。算是双指针吧，fast先移动k个偏移量，再slow和fast一起向后，fast到末尾，slow也刚好到达题目中所需的倒数第k个节点。
+
+
+题解中看到这么一种解法，很不错。算是双指针吧，fast先移动k个偏移量，再slow和fast一起向后，fast到末尾，slow也刚好到达题目中所需的倒数第k个节点。
 
 ```go
 /**
